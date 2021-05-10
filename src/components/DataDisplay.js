@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 
 export default function DataDisplay(props) {
   const history = useHistory()
-  console.log(history)
+  
   const classes = useStyles;
   const [blogs, setBlogs] = useState([])
 
@@ -57,7 +57,7 @@ export default function DataDisplay(props) {
   }
 
   useEffect(() => {
-    console.log('que pasa')
+    
     return history.listen((location => {
       console.log(`You changed the page to ${location.pathname}`)
       setSite(location.pathname)
@@ -88,10 +88,10 @@ export default function DataDisplay(props) {
     }
   }
 
-  console.log(blogs)
+  
   return (
     <div>
-      {site}
+      
       <button onClick={() => (history.push("/the-matter"))}>The Matter</button>
       <button onClick={() => (history.push("/the-cloud"))}>The Cloud</button>
       <button onClick={() => (history.push("/thairath"))}>Thairath</button>
@@ -121,9 +121,6 @@ export default function DataDisplay(props) {
                  
                 </a>
                 </TableCell>
-
-
-
                 {/* <TableCell align="left"><a href={blog['url']} target="_blank">
                   {blog['url']}
                   </a>
@@ -144,17 +141,7 @@ export default function DataDisplay(props) {
 
               </TableRow>
             ))}
-            {/* {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-              </TableRow>
-            ))} */}
+
           </TableBody>
         </Table>
       </TableContainer>
